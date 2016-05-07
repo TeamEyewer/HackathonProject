@@ -17,9 +17,9 @@
 
     <RelativeLayout
         android:id="@+id/topbar"
-        android:layout_below="@+id/topbar_outline"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_below="@+id/topbar_outline"
         android:background="#029FE6">
 
 
@@ -37,6 +37,11 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/margin_1">
 
+        <include
+            layout="@layout/activity_maps"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/controlbar" />
 
     </RelativeLayout>
 

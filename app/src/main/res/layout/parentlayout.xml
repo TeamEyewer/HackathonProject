@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maps"
+            android:textSize="28dp"
+
+            android:layout_centerInParent="true"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+
+   <LinearLayout
+       android:layout_below="@+id/toolbar"
+       android:id="@+id/controlbar"
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:orientation="horizontal"
+       android:elevation="5dp"
+     >
+
+
+
+       <EditText
+           android:id="@+id/lat"
+       android:layout_width="100dp"
+       android:layout_height="45dp"
+       android:hint="Latitude"
+           android:layout_marginRight="10dp"/>
+
+       <EditText
+           android:id="@+id/lng"
+           android:layout_width="100dp"
+           android:layout_height="45dp"
+           android:hint="Longitude"
+           android:layout_marginRight="10dp"/>
+
+       <Button
+           android:id="@+id/addm"
+           android:layout_width="100dp"
+           android:layout_height="38dp"
+           android:text="Add Marker"
+           android:background="@color/colorPrimaryDark"
+           android:textColor="#fff"
+           android:layout_marginRight="5dp"
+           android:layout_marginLeft="5dp"
+           android:layout_marginTop="5dp"
+           android:layout_marginBottom="5dp"
+           />
+
+   </LinearLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

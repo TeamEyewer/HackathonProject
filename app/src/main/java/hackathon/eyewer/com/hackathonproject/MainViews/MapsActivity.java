@@ -2,8 +2,9 @@ package hackathon.eyewer.com.hackathonproject.MainViews;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -12,35 +13,24 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
-import com.microsoft.windowsazure.notifications.NotificationsManager;
 
-import hackathon.eyewer.com.hackathonproject.GCM.NotiHandler;
 import hackathon.eyewer.com.hackathonproject.R;
 
-public class Dashboard extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     public int ready = 0;
     private Marker pmarker = null;
 
-    public static final String SENDER_ID = "954642047450";
-    public static MobileServiceClient mClient;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
-
-        Window window = getWindow();
-        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-
+        setContentView(R.layout.parentlayout);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-
-        NotificationsManager.handleNotifications(this, SENDER_ID, NotiHandler.class);
 
     }
 
@@ -101,5 +91,6 @@ public class Dashboard extends FragmentActivity implements OnMapReadyCallback {
         });
 
     }
+
 
 }
